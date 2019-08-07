@@ -4,6 +4,8 @@
 const http = require('http');
 
 const requestListener = (req, res) => {
+
+    console.dir(res, {depth: 0});
     res.end('Hallo web-programming-lab');
 }
 
