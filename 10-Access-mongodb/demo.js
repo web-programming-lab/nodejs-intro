@@ -1,7 +1,7 @@
 const mongoClient = require('mongodb').MongoClient;
 
 
-mongoClient.connect('mongodb+srv://<<your user>>:<<your password>>@cluster0-yrqxq.mongodb.net/test?retryWrites=true&w=majority', (err, client) => {
+mongoClient.connect('your-connectionstring', (err, client) => {
     if (err) {
         console.log('there is an error', err);
     }
