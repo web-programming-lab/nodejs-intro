@@ -1,4 +1,4 @@
-const mongoClient = require('mongodb').MongoClient;
+const mongoClient = require('./node_modules/mongodb').MongoClient;
 
 
 mongoClient.connect('your-connectionstring', (err, client) => {

@@ -33,4 +33,4 @@ console.log('not yet done ;-)');
 
 // console.log('not done yet ;-)')
 
-
+// Text-Content ausgeben: new Buffer(data).toString()

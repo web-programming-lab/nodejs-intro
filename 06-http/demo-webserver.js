@@ -3,12 +3,15 @@
 
 const http = require('http');
 
+// Req = IncomingMessage
 const requestListener = (req, res) => {
-
+    console.dir(req, {depth: 0});
+    res.setHeader('Content-Type', 'application/json');
+    res.write('Hallo web-programming-lab');
     console.dir(res, {depth: 0});
-    res.end('Hallo web-programming-lab');
+    res.end();
 }
 
 const server = http.createServer(requestListener);
 
-server.listen(4566, () => console.log("Hello from server 123"));
+server.listen(4566, () => console.log("Server started."));
