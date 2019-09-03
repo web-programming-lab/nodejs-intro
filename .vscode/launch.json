@@ -7,9 +7,19 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "nodemon",
+            "name": "07-nodemon",
             "runtimeExecutable": "nodemon",
             "program": "${workspaceFolder}/07-express/router-example.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "11-nodemon",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/11-api-mongodb/index.js",
             "restart": true,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"

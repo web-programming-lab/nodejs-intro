@@ -18,19 +18,19 @@ console.log('not yet done ;-)');
 // ---
 // Manuell via promisify util
 // ---
-// const fs = require('fs');
-// const util = require('util');
+const fs = require('fs');
+const util = require('util');
 
-// // Braucht so keine Callback-Function
-// const fileRead = util.promisify(fs.readFile);
+// Braucht so keine Callback-Function
+const fileRead = util.promisify(fs.readFile);
 
-// async function readMyFileAsync() {
-//     const data = await fileRead(__filename);
-//     console.log('Data: ', data);
-// }
+async function readMyFileAsync() {
+    const data = await fileRead(__filename);
+    console.log('Data: ', new Buffer(data).toString());
+}
 
-// readMyFileAsync();
+readMyFileAsync();
 
-// console.log('not done yet ;-)')
+console.log('not done yet ;-)')
 
 // Text-Content ausgeben: new Buffer(data).toString()

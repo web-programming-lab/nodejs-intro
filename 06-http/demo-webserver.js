@@ -7,7 +7,7 @@ const http = require('http');
 const requestListener = (req, res) => {
     console.dir(req, {depth: 0});
     res.setHeader('Content-Type', 'application/json');
-    res.write('Hallo web-programming-lab');
+    res.write(JSON.stringify({'text': 'Hallo web-programming-lab'}));
     console.dir(res, {depth: 0});
     res.end();
 }

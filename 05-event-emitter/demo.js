@@ -13,4 +13,4 @@ const emitter = new EventEmitter();
 emitter.emit('HELLO_EVENT', 'hello');
 
 
-// Wieviel Mal wird hier 'event was fired' ausgeführt?
+// Wieviel Mal wird hier 'event was fired' ausgeführt?f
