@@ -1,14 +1,15 @@
 const mongoClient = require('./node_modules/mongodb').MongoClient;
 
 
-mongoClient.connect('your-connectionstring', (err, client) => {
+mongoClient.connect('mongodb://test-user:test-123@ds217078.mlab.com:17078/test-db-2', (err, client) => {
     if (err) {
         console.log('there is an error', err);
     }
 
-    let db = client.db('your-db');
+    let db = client.db('test-db-2');
 
-    db.collection('my-collection').save({text: 'hello web programming lab'}, (err, result) => {
+    db.collection('my-collection').insertOne({text: 'hello web programming lab 3'}, (err, result) => {
         console.log('saved to db');
+        client.close();
     });
 });

@@ -1,4 +1,4 @@
-const theOnlyFunction = () => {
+const theOnlyFunction = delay => {
 
 };
 

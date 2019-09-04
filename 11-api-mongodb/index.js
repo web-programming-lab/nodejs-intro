@@ -6,7 +6,7 @@ const server = express();
 server.use(bodyParser.json())
 
 server.get('/students', (req, res) => {
-    mongoClient.connect('mongodb://test-user-2:test-123@ds235827.mlab.com:35827/test-db', (err, client) => {
+    mongoClient.connect('<<your connection string>>', (err, client) => {
         if (err) {
             console.log('there is an error', err);
         }
@@ -23,7 +23,7 @@ server.get('/students', (req, res) => {
 });
 
 server.post('/students', (req, res) => {
-    mongoClient.connect('mongodb://test-user-2:test-123@ds235827.mlab.com:35827/test-db', (err, client) => {
+    mongoClient.connect('<<your connection string>>', (err, client) => {
         if (err) {
             console.log('there is an error', err);
         }
