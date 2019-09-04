@@ -28,7 +28,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Debug Program",
             "program": "${workspaceFolder}/09-debugging/demo.js"
         }
     ]
