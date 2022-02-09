@@ -1,35 +1,4 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "07-nodemon",
-            "runtimeExecutable": "nodemon",
-            "program": "${workspaceFolder}/07-express/router-example.js",
-            "restart": true,
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "11-nodemon",
-            "runtimeExecutable": "nodemon",
-            "program": "${workspaceFolder}/11-api-mongodb/index.js",
-            "restart": true,
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        },
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Debug Program",
-            "program": "${workspaceFolder}/09-debugging/demo.js"
-        }
     ]
 }
