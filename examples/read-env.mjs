@@ -5,5 +5,3 @@
 
 console.log(`USER_ID: ${process.env.USER_ID}`);
 console.log(`USER_NAME: ${process.env.USER_NAME}`);
-
-
