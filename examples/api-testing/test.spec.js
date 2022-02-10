@@ -24,14 +24,14 @@ describe('GET /technologies', () => {
     });
 
     it('responds with one technology', async () => {
-        const mockTechnology = {_id: 'some-user-id', name: 'ArgoCD'};
+        const mockTechnology = {name: 'ArgoCD'};
         await technologies.insertOne(mockTechnology);
 
         const response = await request(app)
                                 .get('/technologies').expect(200);
 
         expect(response.body).toBeDefined();
-        expect(response.body).toEqual([mockTechnology]);
+        expect(response.body[0].name).toBe(mockTechnology.name);
         return response;
     });
 });
