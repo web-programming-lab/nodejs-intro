@@ -1,15 +1,13 @@
-const express = require('express');
+const bodyParser = require("body-parser");
+const express = require("express");
+const server = express();
 const { v4: uuidv4 } = require('uuid');
 
-const app = express();
+server.use(bodyParser.json());
 
-app.use(express.json());
-let router = express.Router();
-
-
-// mount the router on the app
-app.use('/', router);
-app.set('view engine', 'html');
+const technologies = [];
 
 
-app.listen(4444, () => console.log('started'));
+server.listen(4566, () => {
+  console.log("Tech-Radar is running....");
+});
