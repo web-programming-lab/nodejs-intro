@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const mongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const express = require('express');
