@@ -6,14 +6,13 @@ const { readFile } = require('fs').promises;
 console.log(require('fs').promises);
 
 async function readMyFile() {
-    const data = await readFile(__filename);
-    console.log('Data: ', data);
+  const data = await readFile(__filename);
+  console.log('Data: ', data);
 }
 
 readMyFile();
 
 console.log('not yet done ;-)');
-
 
 // // ---
 // // Manuell via promisify util

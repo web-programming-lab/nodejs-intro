@@ -1,9 +1,9 @@
 export class Test {
-    hello(name) {
-        console.log(name);
-    }
+  hello(name) {
+    console.log(name);
+  }
 }
 
-export function testFn (...args) {
-    args.forEach(arg => console.log(arg));
+export function testFn(...args) {
+  args.forEach((arg) => console.log(arg));
 }

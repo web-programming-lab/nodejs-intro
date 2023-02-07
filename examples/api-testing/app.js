@@ -1,7 +1,7 @@
-const mongoClient = require("mongodb").MongoClient;
-const bodyParser = require("body-parser");
-const express = require("express");
-const objectId = require("mongodb").ObjectId;
+const mongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+const express = require('express');
+const objectId = require('mongodb').ObjectId;
 const server = express();
 
 server.use(bodyParser.json());
@@ -16,22 +16,22 @@ server.get('/technologies', async (req, res) => {
   res.send(result);
 });
 
-server.get('/technologies/:id', async(req, res) => {
-    const client = await mongoClient.connect(connectionString);
-    const db = client.db('techradar');
-    const collection = db.collection('technologies');
-    const result = await collection.findOne({_id: objectId(req.params.id)});
-    
-    if (result) {
-        res.send(result);
-    } else {
-        res.status(404);
-    }
+server.get('/technologies/:id', async (req, res) => {
+  const client = await mongoClient.connect(connectionString);
+  const db = client.db('techradar');
+  const collection = db.collection('technologies');
+  const result = await collection.findOne({ _id: objectId(req.params.id) });
 
-    res.end();
+  if (result) {
+    res.send(result);
+  } else {
+    res.status(404);
+  }
+
+  res.end();
 });
 
-server.post("/technologies", async (req, res) => {
+server.post('/technologies', async (req, res) => {
   const client = await mongoClient.connect(connectionString);
   const db = client.db('techradar');
   const collection = db.collection('technologies');

@@ -1,5 +1,5 @@
 setTimeout(() => process.exit(), 4000);
-process.on("exit", () => {
-  console.log("Exit process now.");
+process.on('exit', () => {
+  console.log('Exit process now.');
 });
-console.log("hello web-programming-lab");
+console.log('hello web-programming-lab');

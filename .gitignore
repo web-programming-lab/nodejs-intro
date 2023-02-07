@@ -59,6 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-# Don't checkin package-lock.json
-package-lock.json

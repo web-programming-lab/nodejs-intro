@@ -5,13 +5,13 @@ const server = express();
 server.set('view engine', 'ejs');
 
 server.get('/', (req, res) => {
-    res.render('index');
+  res.render('index');
 });
 
 server.get('/about', (req, res) => {
-    res.render('about');
+  res.render('about');
 });
 
 server.listen(4566, () => {
-    console.log('Server is listening....');
+  console.log('Server is listening....');
 });
