@@ -47,7 +47,7 @@ router.get('/user/:id', (req, res, next) => {
 });
 
 // Post-Example with express and read body
-router.post('/user/', (req, res, nex) => {
+router.post('/user/', (req, res, next) => {
   console.log(req.body);
   res.status(201);
   res.end();
@@ -62,23 +62,10 @@ const logErrors = (err, req, res, next) => {
   next(err);
 };
 
-const clientErrorHandler = (err, req, res, next) => {
-  if (req.xhr) {
-    res.status(500).send({ error: 'Something failed!' });
-  } else {
-    next(err);
-  }
-};
-
-const errorHandler = (err, req, res, next) => {
-  res.status(500);
-  res.render('error', { error: err });
-};
-
 app.use(logErrors);
-app.use(clientErrorHandler);
-app.use(errorHandler);
 
 app.listen(4444, () => console.log('started'));
+
+app.use(logErrors);
 
 //see https://expressjs.com/en/guide/using-middleware.html#middleware.router
