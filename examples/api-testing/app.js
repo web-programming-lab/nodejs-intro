@@ -35,7 +35,7 @@ server.post('/technologies', async (req, res) => {
   const client = await mongoClient.connect(connectionString);
   const db = client.db('techradar');
   const collection = db.collection('technologies');
-  const result = await collection.insertOne(req.body);
+  await collection.insertOne(req.body);
 
   res.status(201);
   res.end();
