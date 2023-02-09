@@ -66,6 +66,4 @@ app.use(logErrors);
 
 app.listen(4444, () => console.log('started'));
 
-app.use(logErrors);
-
 //see https://expressjs.com/en/guide/using-middleware.html#middleware.router
