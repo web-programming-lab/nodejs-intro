@@ -11,9 +11,9 @@
   "author": "Web Programming Lab 🚀",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
-    "nodemon": "^2.0.20",
-    "prettier": "^2.8.2"
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.1"
   }
 }
