@@ -1,0 +1,22 @@
+### GET request to example server
+GET localhost:3000/ping
+
+### GET request to example server
+GET http://localhost:3000/technology
+
+### GET Technology By Id
+GET http://localhost:3000/technology/6984935337f2829b2aa65ef7
+
+### Persist new Technology
+POST http://localhost:3000/technology
+Content-Type: application/json
+
+{
+  "name": "Vue.js"
+}
+
+### Error Route
+GET http://localhost:3000/technology/error
+
+### Ping Controller
+GET localhost:4566/ping
