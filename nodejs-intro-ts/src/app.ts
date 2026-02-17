@@ -1,7 +1,6 @@
 import express from 'express';
-import { globalErrorHandler } from './middleware/errorHandler';
+import { globalErrorHandler } from './middleware/error.middleware';
 import { technologyRouter } from './routes/technology.routes';
-import { Db, MongoClient } from 'mongodb';
 
 const app = express();
 
