@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 import { server } from './server';
-import { Collection, Db, MongoClient } from 'mongodb';
+import { Collection, MongoClient } from 'mongodb';
 
 const request = supertest(server);
 
