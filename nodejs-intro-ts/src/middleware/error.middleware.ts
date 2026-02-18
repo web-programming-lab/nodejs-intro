@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { CustomError } from '../domain/CustomError';
+import { CustomError } from '../features/technology/technology.types';
 
 export const globalErrorHandler = (
   err: CustomError,

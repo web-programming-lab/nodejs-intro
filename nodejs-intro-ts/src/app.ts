@@ -1,13 +1,13 @@
 import express from 'express';
 import { globalErrorHandler } from './middleware/error.middleware';
-import { technologyRouter } from './routes/technology.routes';
+import { technologyController } from './features/technology/technology.controller';
 
 const app = express();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-app.use('/technologies', technologyRouter);
+app.use('/technologies', technologyController);
 app.use(
   '/ping',
   (req: express.Request, res: express.Response): express.Response =>

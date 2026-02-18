@@ -1,5 +1,5 @@
 import { Collection, Db, MongoClient } from 'mongodb';
-import { MONGODB_CONFIG } from '../config/mongodb.config';
+import { MONGODB_CONFIG } from './mongodb.config';
 
 export class ApplicationDatabase {
   private static db: Db | null = null;

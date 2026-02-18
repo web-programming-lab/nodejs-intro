@@ -1,3 +1,7 @@
+export interface Technology {
+  name: string;
+}
+
 export class CustomError extends Error {
   public statusCode: number;
 

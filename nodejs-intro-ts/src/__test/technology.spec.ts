@@ -1,6 +1,6 @@
 import { app } from '../app';
 import supertest from 'supertest';
-import { ApplicationDatabase } from '../shared/application-database';
+import { ApplicationDatabase } from '../database/application-database';
 
 const request = supertest(app);
 
@@ -8,15 +8,13 @@ afterEach(async () => {
   await ApplicationDatabase.getTechnologyCollection().deleteMany({});
 });
 
-describe('POST /api/v1/users', () => {
-  it('should test db connection', async () => {
-    await ApplicationDatabase.getTechnologyCollection().insertOne({
-      name: 'ArgoCD',
-    });
-  });
+describe('GET /technologies', () => {
 
   it('responds with 200', async () => {
-    await request.get('/technologies').expect(200);
+    const response = await request.get('/technologies');
+
+    expect(response.status).toEqual(200)
+    expect(response.body).toEqual([])
   });
 
   it('responds with one technology', async () => {

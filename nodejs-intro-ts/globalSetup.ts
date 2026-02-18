@@ -1,5 +1,5 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { MONGODB_CONFIG } from './src/config/mongodb.config';
+import { MONGODB_CONFIG } from './src/database/mongodb.config';
 
 declare global {
   // eslint-disable-next-line no-var
