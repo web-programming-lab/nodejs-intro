@@ -1,6 +1,6 @@
-import { app } from '../app';
 import supertest from 'supertest';
-import { ApplicationDatabase } from '../database/application-database';
+import { app } from '../../app';
+import { ApplicationDatabase } from '../../database/application-database';
 
 const request = supertest(app);
 

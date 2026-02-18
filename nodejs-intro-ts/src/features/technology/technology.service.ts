@@ -16,9 +16,5 @@ export const postTechnology = async (technology: Technology) => {
   return await getTechnologyCollection().insertOne(technology);
 };
 
-export const errorFunctionality = async () => {
-  throw new Error('Custom Error!');
-};
-
 const getTechnologyCollection = () =>
   ApplicationDatabase.getCollections().TechnologyCollection;

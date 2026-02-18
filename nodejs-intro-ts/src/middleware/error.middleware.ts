@@ -1,13 +1,18 @@
-import { Request, Response } from 'express';
-import { CustomError } from '../features/technology/technology.types';
+import { NextFunction, Request, Response } from 'express';
+
+import { ApplicationError } from './error.types';
 
 export const globalErrorHandler = (
-  err: CustomError,
+  err: Error,
   req: Request,
   res: Response,
+  nextFn: NextFunction,
 ) => {
-  const statusCode = err.statusCode || 500;
+  const statusCode = err instanceof ApplicationError ? err.statusCode : 500;
   const message = err.message || 'Internal Server Error';
 
   res.status(statusCode).json({ error: message });
+
+  // Delegate Error to Default Express Error Handler in case not handled above
+  nextFn(err);
 };

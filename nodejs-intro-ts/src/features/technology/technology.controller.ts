@@ -1,6 +1,5 @@
 import { Request, Response, Router } from 'express';
 import {
-  errorFunctionality,
   getAllTechnologies,
   getTechnologyById,
   postTechnology,
@@ -28,7 +27,5 @@ technologyController.get('/:id', async (req: Request, res: Response) => {
     res.status(404).end();
   }
 });
-
-technologyController.get('/error', async () => await errorFunctionality());
 
 export { technologyController };
