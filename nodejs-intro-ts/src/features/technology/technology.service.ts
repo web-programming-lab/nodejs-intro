@@ -3,23 +3,22 @@ import { ApplicationDatabase } from '../../database/application-database';
 import { Technology } from './technology.types';
 
 export const getAllTechnologies = async () => {
-  const { TechnologyCollection } = ApplicationDatabase.getCollections();
-  return TechnologyCollection.find({}).toArray();
+  return getTechnologyCollection().find({}).toArray();
 };
 
 export const getTechnologyById = async (technologyId: string) => {
-  const { TechnologyCollection } = ApplicationDatabase.getCollections();
-
-  return await TechnologyCollection.findOne({
+  return await getTechnologyCollection().findOne({
     _id: new ObjectId(technologyId),
   });
 };
 
 export const postTechnology = async (technology: Technology) => {
-  const { TechnologyCollection } = ApplicationDatabase.getCollections();
-  return await TechnologyCollection.insertOne(technology);
+  return await getTechnologyCollection().insertOne(technology);
 };
 
 export const errorFunctionality = async () => {
   throw new Error('Custom Error!');
 };
+
+const getTechnologyCollection = () =>
+  ApplicationDatabase.getCollections().TechnologyCollection;
