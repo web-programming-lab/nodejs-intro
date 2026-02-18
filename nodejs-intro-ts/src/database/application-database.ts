@@ -1,5 +1,9 @@
 import { Collection, Db, MongoClient } from 'mongodb';
-import { MONGODB_CONFIG } from './mongodb.config';
+import { DbCollectionType, MONGODB_CONFIG } from './mongodb.config';
+
+export type DbCollections = {
+  [K in DbCollectionType]: Collection;
+};
 
 export class ApplicationDatabase {
   private static db: Db | null = null;
@@ -12,14 +16,21 @@ export class ApplicationDatabase {
     }
   }
 
-  static getTechnologyCollection(): Collection {
+  static getCollections(): DbCollections {
     if (!ApplicationDatabase.db) {
       throw new Error('DB not initialized');
     }
 
-    return ApplicationDatabase.db.collection(
-      MONGODB_CONFIG.COLLECTIONS.TECHNOLOGY,
-    );
+    const collections : DbCollections = {} as DbCollections;
+
+    for (const key in MONGODB_CONFIG.COLLECTIONS) {
+      const collectionKey = key as DbCollectionType;
+      const collectionString = MONGODB_CONFIG.COLLECTIONS[collectionKey];
+      collections[collectionKey] =
+        ApplicationDatabase.db.collection(collectionString);
+    }
+
+    return collections;
   }
 
   static async close(): Promise<void> {

@@ -5,23 +5,22 @@ import { ApplicationDatabase } from '../database/application-database';
 const request = supertest(app);
 
 afterEach(async () => {
-  await ApplicationDatabase.getTechnologyCollection().deleteMany({});
+  const { TECHNOLOGY } = ApplicationDatabase.getCollections();
+  await TECHNOLOGY.deleteMany({});
 });
 
 describe('GET /technologies', () => {
-
   it('responds with 200', async () => {
     const response = await request.get('/technologies');
 
-    expect(response.status).toEqual(200)
-    expect(response.body).toEqual([])
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual([]);
   });
 
   it('responds with one technology', async () => {
     const mockTechnology = { name: 'ArgoCD' };
-    await ApplicationDatabase.getTechnologyCollection().insertOne(
-      mockTechnology,
-    );
+    const { TECHNOLOGY } = ApplicationDatabase.getCollections();
+    await TECHNOLOGY.insertOne(mockTechnology);
 
     const response = await request.get('/technologies').expect(200);
 

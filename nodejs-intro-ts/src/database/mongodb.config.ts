@@ -6,3 +6,5 @@ export const MONGODB_CONFIG = {
     TECHNOLOGY: 'technologies',
   },
 };
+
+export type DbCollectionType = keyof typeof MONGODB_CONFIG.COLLECTIONS;

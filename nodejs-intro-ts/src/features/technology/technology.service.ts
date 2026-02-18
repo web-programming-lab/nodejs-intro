@@ -3,20 +3,21 @@ import { ApplicationDatabase } from '../../database/application-database';
 import { Technology } from './technology.types';
 
 export const getAllTechnologies = async () => {
-  return ApplicationDatabase.getTechnologyCollection().find({}).toArray();
+  const { TECHNOLOGY } = ApplicationDatabase.getCollections();
+  return TECHNOLOGY.find({}).toArray();
 };
 
 export const getTechnologyById = async (technologyId: string) => {
-  const technologyCollection = ApplicationDatabase.getTechnologyCollection();
+  const { TECHNOLOGY } = ApplicationDatabase.getCollections();
 
-  return await technologyCollection.findOne({
+  return await TECHNOLOGY.findOne({
     _id: new ObjectId(technologyId),
   });
 };
 
 export const postTechnology = async (technology: Technology) => {
-  const technologyCollection = ApplicationDatabase.getTechnologyCollection();
-  return await technologyCollection.insertOne(technology);
+  const { TECHNOLOGY } = ApplicationDatabase.getCollections();
+  return await TECHNOLOGY.insertOne(technology);
 };
 
 export const errorFunctionality = async () => {
