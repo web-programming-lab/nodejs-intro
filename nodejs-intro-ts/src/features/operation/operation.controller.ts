@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import { ApplicationError } from '../../middleware/error.types';
+import { ApplicationError } from '../../domain/error.types';
 
 const operationController = Router();
 
